@@ -41,7 +41,12 @@ with(power_consumption, {
           col="red")
     lines(Time[!is.na(Sub_metering_3)],
           Sub_metering_3[!is.na(Sub_metering_1)&!is.na(Sub_metering_2)&!is.na(Sub_metering_3)],
-          col="blue")}
+          col="blue")
+    leg.txt <- c("Sub_metering_1",
+                 "Sub_metering_2",
+                 "Sub_metering_3"
+    )
+    legend("topright", legend=leg.txt, col=c("black", "red", "blue"), lty=c(1, 1))}
     {plot(Time[!is.na(Global_reactive_power)],
           Global_reactive_power[!is.na(Global_reactive_power)], 
           xlab="datetime",
